@@ -12,9 +12,11 @@ const useStack = (initalData = []) => {
   }, []);
 
   let pop = useCallback(() => {
-    stack.pop();
-    setStack(() => [...stack]);
-  }, [stack]);
+    setStack((prev) => {
+      prev.pop();
+      return [...prev];
+    });
+  }, []);
 
   let clear = useCallback(() => {
     setStack([]);
