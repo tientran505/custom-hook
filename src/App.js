@@ -1,4 +1,5 @@
 import './App.css';
+import useStack from './hooks/useStack';
 
 function Stack({ top, size, stack }) {
   return (
