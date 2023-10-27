@@ -1,5 +1,3 @@
-THIS ONE IS TOO HARD SO I SEARCH ON THE INTERNET FOR THE SOLUTION
-
 /**
  * @param {number[][]} grid
  * @return {number}

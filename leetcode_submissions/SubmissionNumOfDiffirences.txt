@@ -1,6 +1,3 @@
-I SOLVED THIS PROBLEM MYSELF
-
-
 /**
  * @param {string} word
  * @return {number}
