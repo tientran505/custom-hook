@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: #0f0d0e;
   color: #f9f4da;
@@ -19,14 +23,20 @@ ul {
   background: #1b1818;
   padding: 10px 20px;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+  gap: 0.675rem;
 }
 
 li {
+  width: 5em;
   text-align: center;
-  border: 1px solid transparent;
-  border-radius: 10px;
+  border: 2px solid transparent;
+  border-radius: .25rem;
   border-color: #dcd8c1;
-  padding: 10px 0px;
+  padding: 10px 5px;
 }
 
 button.link {
@@ -44,9 +54,6 @@ button.link:disabled {
   cursor: not-allowed;
 }
 
-li:first-child {
-  border-color: #0e8b4d;
-}
 
 li:last-child {
   border-color: #12acda;
