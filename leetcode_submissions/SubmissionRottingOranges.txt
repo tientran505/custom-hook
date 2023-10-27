@@ -24,7 +24,8 @@ var orangesRotting = function(grid) {
     while(current.length > 0){
         count += 1
         const next = []
-        const rotten = (i, j) => {
+
+        const checkRotten = (i, j) => {
             grid[i][j] === 2
             next.push([i, j])
             freshCount -= 1
@@ -32,16 +33,16 @@ var orangesRotting = function(grid) {
 
         for(const [i, j] of current){
             if(grid[i - 1] && grid[i - 1][j] === 1){
-                rotten(i - 1, j)
+                checkRotten(i - 1, j)
             }
             if(grid[i + 1] && grid[i + 1][j] === 1){
-                rotten(i + 1, j)
+                checkRotten(i + 1, j)
             }
             if(grid[i][j - 1] === 1){
-                rotten(i, j - 1)
+                checkRotten(i, j - 1)
             }
             if(grid[i][j + 1] === 1){
-                rotten(i, j + 1)
+                checkRotten(i, j + 1)
             }
         }
         current = next
