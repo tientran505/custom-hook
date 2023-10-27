@@ -3,16 +3,13 @@ import { useCallback, useMemo, useState } from "react";
 const useStack = (initalData = []) => {
   let [stack, setStack] = useState(initalData);
 
-  let top = useMemo(() => stack[0] || 0, [stack]);
+  let top = useMemo(() => stack[stack.length - 1] || 0, [stack]);
 
   let size = useMemo(() => stack.length, [stack.length]);
 
-  let push = useCallback(
-    (val) => {
-      setStack((prev) => [...prev, size - 1 + val]);
-    },
-    [size]
-  );
+  let push = useCallback((val) => {
+    setStack((prev) => [...prev, val]);
+  }, []);
 
   let pop = useCallback(() => {
     stack.pop();
