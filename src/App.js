@@ -1,5 +1,5 @@
-import './App.css';
-import useStack from './hooks/useStack';
+import "./App.css";
+import useStack from "./hooks/useStack";
 
 function Stack({ top, size, stack }) {
   return (
@@ -31,20 +31,16 @@ function App() {
     <div>
       <header>
         <h1>useStack</h1>
-        <div className='btn-group'>
-          <button className='link' onClick={() => push((top || 0) + 1)}>
+        <div className="btn-group">
+          <button className="link" onClick={() => push((top || 0) + 1)}>
             Add
           </button>
-          <button
-            disabled={size === 0}
-            className='link'
-            onClick={() => pop()}
-          >
+          <button disabled={size === 0} className="link" onClick={() => pop()}>
             Pop
           </button>
           <button
             disabled={size === 0}
-            className='link'
+            className="link"
             onClick={() => clear()}
           >
             Clear
