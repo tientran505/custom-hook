@@ -31,7 +31,7 @@ function App() {
       <header>
         <h1>useStack</h1>
         <div className="btn-group">
-          <button className="link" onClick={() => push((top || 0) + 1)}>
+          <button className="link" onClick={() => push((top() || 0) + 1)}>
             Add
           </button>
           <button disabled={size === 0} className="link" onClick={() => pop()}>
