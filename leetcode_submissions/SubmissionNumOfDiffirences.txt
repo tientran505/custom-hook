@@ -1,0 +1,32 @@
+I SOLVED THIS PROBLEM MYSELF
+
+
+/**
+ * @param {string} word
+ * @return {number}
+ */
+/**
+ * @param {string} word
+ * @return {number}
+ */
+var numDifferentIntegers = function (word) {
+  let table = [];
+  let connect = "";
+  let idx = 0;
+
+  while (idx <= word.length) {
+    if (isNaN(word[idx])) {
+      let val = BigInt(connect);
+      if (!table.includes(val) && connect) {
+        table.push(val);
+      }
+      connect = "";
+    } else {
+      connect += word[idx];
+    }
+
+    idx++;
+  }
+
+  return table.length;
+};
