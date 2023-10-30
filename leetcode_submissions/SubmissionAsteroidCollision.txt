@@ -1,0 +1,30 @@
+/**
+ * @param {number[]} asteroids
+ * @return {number[]}
+ */
+var asteroidCollision = function(asteroids) {
+    const result = [asteroids[0]]
+
+    for(let i = 1; i < asteroids.length; i++) {
+        if(Math.sign(asteroids[i]) === -1 && Math.sign(result[result.length - 1]) === 1) {
+            let isPushAsteroid = true
+            while(Math.sign(asteroids[i]) === -1 && Math.sign(result[result.length - 1]) === 1) {
+                if(Math.abs(asteroids[i]) === Math.abs(result[result.length - 1])) {
+                    result.pop()
+                    isPushAsteroid = false
+                    break
+                } else if(Math.abs(asteroids[i]) < Math.abs(result[result.length - 1])) {
+                    isPushAsteroid = false
+                    break
+                } else {
+                    result.pop()
+                }
+            }
+            if(isPushAsteroid) result.push(asteroids[i])
+        } else {
+            result.push(asteroids[i])
+        }
+    }
+
+    return result
+};

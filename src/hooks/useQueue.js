@@ -1,14 +1,31 @@
+import { useState } from 'react'
+
 const useQueue = (initialData = []) => {
-  
+	const [queue, setQueue] = useState(initialData)
 
-  return {
-    push,
-    pop,
-    clear,
-    top: ,
-    size: ,
-    queue,
-  };
-};
+	const push = (item) => {
+		setQueue([...queue, item])
+	}
 
-export default useQueue;
+	const pop = () => {
+		const topElement = queue[0]
+		setQueue(queue.slice(1))
+
+		return topElement
+	}
+
+	const clear = () => {
+		setQueue([])
+	}
+
+	return {
+		push,
+		pop,
+		clear,
+		top: queue[0],
+		size: queue.length,
+		queue,
+	}
+}
+
+export default useQueue
