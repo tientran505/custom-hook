@@ -1,20 +1,21 @@
 import { useState } from 'react'
 const useQueue = (initialData = []) => {
   const [queue, setQueue] = useState(initialData);
-  const [top, setTop] = useState(queue[queue.length - 1]);
+  const [top, setTop] = useState(queue[0]);
   const [size, setSize] = useState(queue.length);
 
   const push = (item) => {
-    setQueue([...queue, item]);
-    setSize(queue.length + 1);
-    setTop(item);
+    const newQueue = [...queue, item];
+    setQueue(newQueue);
+    setSize(newQueue.length);
+    setTop(newQueue[0]);
   };
   const pop = () => {
     const fistItem = queue[0];
     const newQueue = queue.slice(1);
     setQueue(newQueue);
     setSize(newQueue.length);
-    setTop(newQueue[newQueue.length - 1]);
+    setTop(newQueue[0]);
     return fistItem;
 
   }
