@@ -1,7 +1,8 @@
 import './App.css';
 import useQueue from './hooks/useQueue';
 
-function Queue({ top, size, queue }) {
+function Queue({ top, size, queue = [] }) {
+  console.log('Queue prop:', queue);
   return (
     <figure>
       <article>
@@ -26,7 +27,8 @@ function Queue({ top, size, queue }) {
 
 function App() {
   const { push, pop, clear, top, size, queue } = useQueue([1, 2, 3]);
-
+  
+  console.log('Queue:', queue);
   return (
     <div>
       <header>
