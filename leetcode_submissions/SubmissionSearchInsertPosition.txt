@@ -17,8 +17,6 @@ var searchInsert = function (nums, target) {
                 return right + 1;
             }
             left = mid + 1;
-
         }
-
     }
 };
