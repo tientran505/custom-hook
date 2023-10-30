@@ -1,7 +1,7 @@
 import './App.css';
-import useStack from './hooks/useStack';
+import useQueue from './hooks/useQueue';
 
-function Stack({ top, size, stack }) {
+function Queue({ top, size, queue }) {
   return (
     <figure>
       <article>
@@ -9,7 +9,7 @@ function Stack({ top, size, stack }) {
           <b>Top</b>
         </p>
         <ul>
-          {stack.map((item, i) => {
+          {queue.map((item, i) => {
             const isTop = top === item;
 
             if (isTop) {
@@ -19,18 +19,18 @@ function Stack({ top, size, stack }) {
           })}
         </ul>
       </article>
-      <figcaption>{size} items in the stack</figcaption>
+      <figcaption>{size} items in the queue</figcaption>
     </figure>
   );
 }
 
 function App() {
-  const { push, pop, clear, top, size, stack } = useStack([1, 2, 3]);
+  const { push, pop, clear, top, size, queue } = useQueue([1, 2, 3]);
 
   return (
     <div>
       <header>
-        <h1>useStack</h1>
+        <h1>useQueue</h1>
         <div className='btn-group'>
           <button className='link' onClick={() => push((top || 0) + 1)}>
             Add
@@ -51,7 +51,7 @@ function App() {
           </button>
         </div>
       </header>
-      <Stack stack={stack} size={size} top={top} />
+      <Queue queue={queue} size={size} top={top} />
     </div>
   );
 }
